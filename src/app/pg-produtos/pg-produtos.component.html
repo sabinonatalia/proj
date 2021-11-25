@@ -52,7 +52,7 @@
         <p class="card-text">Quantidade: {{produto.qtd}}</p>
         <p class="card-text">{{produto.descricao}}</p>
         <a *ngIf="auth.adm()"   [routerLink]="['/produto-edit', produto.id]" class="btn btn-primary text-center">Editar</a>
-        <a [routerLink]="['/produto-delete/:id', produto.id]" class="btn btn-danger">Apagar</a>
+        <!-- <a [routerLink]="['/produto-delete/:id', produto.id]" class="btn btn-danger">Apagar</a> -->
       </div>
     </div>
   </div>
