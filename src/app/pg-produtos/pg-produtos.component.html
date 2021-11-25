@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row d-flex-justiify-content-center">
+    <h1 class="text-center mt-5">Produtos</h1>
+    <p class="lead text-center">
+      
+    </p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+          aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Ordenar
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <li><a *ngFor="let produto of listaProduto | orderBy: produto.nome " class="dropdown-item" href="#">Por nome</a></li>
+                <li><a class="dropdown-item" href="#">Por preço</a></li>
+                <li><a class="dropdown-item" href="#">Por categoria</a></li>
+              </ul>
+            </li> -->
+            <li class="nav-item">
+              <button *ngIf="auth.adm()" type="button" href="" class=" btn btn-secondary text-white"
+                routerLink="/cadastro-produto">Cadastrar produto</button>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input [(ngModel)]="nomeProduto" (keyup)="findByNomeProduto()" name="nomeProduto" class="form-control me-2" type="search" placeholder="Busca por nome" aria-label="Search"  >
+            <!-- <button  class="btn btn-outline-warning" type="submit">Pesquisa</button> -->
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row d-flex-justiify-content-center">
+    <div *ngFor="let produto of listaProduto" class="card mt-3 mb-3 me-3" style="width: 18rem;">
+      <img src="{{produto.imgURL}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Nome: {{produto.nome}}</h5>
+        <p class="card-text">Preço: {{produto.preco}}</p>
+        <p class="card-text">Categoria: {{produto.categoria}}</p>
+        <p class="card-text">Quantidade: {{produto.qtd}}</p>
+        <p class="card-text">{{produto.descricao}}</p>
+        <a *ngIf="auth.adm()"   [routerLink]="['/produto-edit', produto.id]" class="btn btn-primary text-center">Editar</a>
+        <a [routerLink]="['/produto-delete/:id', produto.id]" class="btn btn-danger">Apagar</a>
+      </div>
+    </div>
+  </div>
+</div>

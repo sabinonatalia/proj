@@ -1,0 +1,25 @@
+<div class="container mt-4 p-5">
+  <div class="row">   
+    <div class="">
+    <form class="form-signin">
+      <div class="text-center"><a routerLink="/home"><img class="mb-4" src="https://media.discordapp.net/attachments/814843784529313795/912758465162805248/Black_Text_Icons_Icon_Set.png?width=473&height=473" alt="" width="77" height="77"/></a></div>
+      <h1 class="h3 mb-3 font-weight-normal text-center">Faça seu log-in</h1>
+      <label for="inputEmail" class="sr-only">E-mail cadastrado</label>
+      <input [(ngModel)]="usuarioLogin.email" name="email"type="email" id="email" class="form-control" placeholder="E-mail" required autofocus />
+      <label for="inputPassword" class="sr-only">Senha</label>
+      <input [(ngModel)]="usuarioLogin.senha" name="senha" type="password" id="senha" class="form-control" placeholder="Senha" required />
+      <div class="text-center mb-2">
+        <!-- <label>
+          <input type="checkbox" value="remember-me"/> Acesso Administrador
+        </label> -->
+      </div>
+      <div class="text-center">
+        <button class="btn btn-lg btn-secondary btn-block" type="submit" (click)="login()">
+          Log in
+        </button>
+      </div>
+      
+    </form>
+  </div>
+  </div>
+</div>

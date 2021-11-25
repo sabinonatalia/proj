@@ -1,0 +1,32 @@
+<div *ngIf="">
+  <header class="masthead">
+    <div class="inner-header">
+      <h3 class="masthead-brand">SisGest Vila Yara</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <ul class="navbar-nav">
+          <ng-container>
+            <li class="nav-item">
+              <a *ngIf='auth.naoLogado()' class="nav-link active" routerLink="/home">Home</a>
+            </li>
+          </ng-container>
+          <li class="nav-item">
+            <a *ngIf='auth.naoLogado()' class="nav-link" routerLink="/login">Log in <i class="fa fa-user-circle-o"
+                aria-hidden="true"></i></a>
+          </li>
+          <ng-container *ngIf='auth.logado()'>
+            <li class="nav-item">
+              <a *ngIf="auth.adm()" class="nav-link" routerLink="/produtos">Controle de estoque</a>
+            </li>
+            <li class="nav-item">
+              <a *ngIf="auth.adm()" class="nav-link" routerLink="/cadastro-usuarios">Controle de usuários</a>
+              <!-- ngIf para admin -->
+            </li>
+            <li class="nav-item">
+              <a (click)="logout()" class="nav-link">Log out <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+            </li>
+          </ng-container>
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>
