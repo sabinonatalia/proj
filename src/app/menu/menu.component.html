@@ -1,4 +1,4 @@
-<div *ngIf="">
+<div>
   <header class="masthead">
     <div class="inner-header">
       <h3 class="masthead-brand">SisGest Vila Yara</h3>
@@ -19,7 +19,6 @@
             </li>
             <li class="nav-item">
               <a *ngIf="auth.adm()" class="nav-link" routerLink="/cadastro-usuarios">Controle de usuários</a>
-              <!-- ngIf para admin -->
             </li>
             <li class="nav-item">
               <a (click)="logout()" class="nav-link">Log out <i class="fa fa-sign-out" aria-hidden="true"></i></a>
