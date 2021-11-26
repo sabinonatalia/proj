@@ -22,7 +22,7 @@ export class CadastroProdutoComponent implements OnInit {
     window.scroll(0,0)
 
     if (environment.token == ''){
-      // alert("Sessão expirada, faça login novamente.")
+      alert("Sessão expirada, faça login novamente.")
       this.router.navigate(['/login'])
     }
 

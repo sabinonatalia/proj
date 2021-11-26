@@ -23,10 +23,9 @@ export class ProdutoEditComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0)
     if (environment.token == ''){
-      // alert("Sessão expirada, faça login novamente.")
+    alert("Sessão expirada, faça login novamente.")
       this.router.navigate(['/login'])
     }
-
     let id = this.route.snapshot.params['id']
     this.findByIdProduto(id)
   }

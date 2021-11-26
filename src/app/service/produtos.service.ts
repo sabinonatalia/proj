@@ -29,20 +29,20 @@ export class ProdutosService {
 
   }
   postProduto(produto: Produto): Observable<Produto>{
-    return this.http.post<Produto>('https://sisgest-vila-yara.herokuapp.com/produtos', produto, this.token)
+    return this.http.post<Produto>('https://sisgest-vila-yara.herokuapp.com/produtos/cadastrar', produto, this.token)
   }
 
   putProduto(produto: Produto): Observable<Produto>{
-    return this.http.put<Produto>('https://sisgest-vila-yara.herokuapp.com', produto, this.token)
+    return this.http.put<Produto>('https://sisgest-vila-yara.herokuapp.com/produtos', produto, this.token)
   }
 
   deleteProduto(id: number):Observable<Produto>{
-    return this.http.delete<Produto>(`https://sisgest-vila-yara.herokuapp.com/${id}`, this.token)
+    return this.http.delete<Produto>(`https://sisgest-vila-yara.herokuapp.com/produtos/produto/${id}`, this.token)
 
   }
 
   getByNomeProduto(nome: string): Observable<Produto[]>{
-    return this.http.get<Produto[]>(`https://sisgest-vila-yara.herokuapp.com/nome/${nome}`, this.token)
+    return this.http.get<Produto[]>(`https://sisgest-vila-yara.herokuapp.com/produtos/nome/${nome}`, this.token)
   }
   
 }
